@@ -1,0 +1,11 @@
+<!-- anime_detail.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>{{ anime.title }}</h1>
+<img class="img-thumbnail" src="{{ anime.image_url }}">
+<p>{{ anime.synopsis }}</p>
+<p>Score: {{ anime.score }}</p>
+
+{% endblock %}
