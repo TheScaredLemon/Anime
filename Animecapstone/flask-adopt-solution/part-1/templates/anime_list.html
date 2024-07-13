@@ -1,0 +1,23 @@
+<!-- anime_list.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Anime List</h1>
+
+<div class="row anime-listing">
+
+  {% for anime in animes %}
+  <div class="col-3">
+    <img class="img-thumbnail" src="{{ anime.image_url }}">
+    <a href="{{ url_for('show_anime_detail', anime_id=anime.id) }}">{{ anime.title }}</a>
+    <p>{{ anime.score }}</p>
+  </div>
+  {% else %}
+  <div class="col-12">No animes yet.</div>
+  {% endfor %}
+
+</div>
+
+{% endblock %}
+
